@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">123</div>
+    <button id="btn">点击</button>
+    <script>
+          btn.addEventListener("touchstart",(e)=>{
+              box.innerHTML = e.targetTouches.length;
+              console.log("touchstart")
+              box.addEventListener("touchmove",()=>{
+                  box.innerHTML=e.targetTouches.length;
+                  console.log("touchmove")
+              })
+              btn.addEventListener("touchend",()=>{
+                  console.log("touch end")
+              })
+
+          }) 
+    </script>
+</body>
+</html>
